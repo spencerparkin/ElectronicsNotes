@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resistors in Parallel</title>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+</head>
+    <body>
+        <h1>Resistors in Parallel</h1>
+        <p>
+            Referring to the following circuit diagram...
+        </p>
+        <center><img src="images/resistors_in_parallel.png"></center>
+        <p>
+            ...we let \(\{R_i\}_{i=1}^N\) be a set of \(N\) resistors in parallel, and let \(V_{bat}\)
+            denote the total voltage of the battery.  These are our known values.  Unknown will be the
+            values in \(\{V_i\}_{i=1}^N\), the voltage drops across each resistor, \(\{I_i\}_{i=1}^N\),
+            the currents running through each resistor, \(R_{eqv}\), the equivalent resistance of
+            all the resistors, and \(I\), the net current flowing through the circuit.  Note that the
+            battery has been split apart to make the digram simpler.
+        </p>
+        <p>
+            Our first observation here is an application of Kirchhoff's first law.  Being made,
+            we realize that for all \(i\in[1,N]\), we have \(V_{bat}=V_i\).  Why?  Because no matter
+            which path we take through the circuit, each resistor's voltage drop is paired with the entire voltage
+            gain of the battery.
+        </p>
+        <p>
+            Applying Kirchhoff's second law, we get the equation \(I=\sum_{i=1}^N I_i\).  This can be seen
+            while examining the junctions before and after the resistors.  Combining this with Ohm's law,
+            we find that...
+            $$ V_{bat} = R_{eqv}I = R_{eqv}\sum_{i=1}^N I_i = R_{eqv}\sum_{i=1}^N\frac{V_{bat}}{R_i}. $$
+            Clearly, \(V_{bat}\) cancels on both sides, leaving us, after a bit of rearrangement, with...
+            $$ \frac{1}{R_{eqv}} = \sum_{i=1}^N\frac{1}{R_i} $$
+            ...an elegant complement to the formula we get for resisters in series.
+            It's worth noting that for all \(i\in[1,N]\), we have \(R_{eqv}\leq R_i\).
+        </p>
+    </body>
+</html>

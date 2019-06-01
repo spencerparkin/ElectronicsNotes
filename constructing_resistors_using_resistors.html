@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Constructing Resistors Using Resitors</title>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+</head>
+    <body>
+        <h1>Constructing Resistors Using Resitors</h1>
+        <p>
+            Sometimes we have a need for certain resistances, but we don't have
+            a resistor component of the desired resistance value.  To get around this,
+            we can combing resistors in parallel and in series to get close to
+            a desired value.  Often an approximation will do, but it is interesting
+            here to consider this problem for the perspective of real analysis.
+            There is a bit of a similarity here between this and the hail-stone problem from number theory.
+        </p>
+        <p>
+            Let \(r_t\gt 0\) denote a target resistance value, and suppose we're given just
+            one resistor of value \(r_1\gt 0\).  Can we build, using just copies of this resistor, a network of resistors who's
+            equivilant resistance value is \(r_t\)?
+        </p>
+        <p>
+            Consider an iterative process where at iteration \(i\) we find the
+            integer \(m_i\geq 1\) such that \(m_ir_i\geq r_t> (m_1-1)r_i\) using
+            resistors in series.
+            If \(m_ir_i=r_t\), we're done.  If not, find an integer \(n_i\geq 1\) such that
+            \(r_{i+1}\lt r_i\) and...
+            $$ r_{i+1}=\frac{m_ir_i}{2^{n_i}} $$
+            ...using resistors in parallel.
+            Specifically, we duplicate the series of \(m_i\) resistors \(2^{n_i}\) times in parallel.
+        </p>
+        <p>
+            Now, if this iteration process never terminates, will it converge in the limit?
+            What we require is \(r_i = m_ir_i - (m_i-1)r_i\to 0\) as \(i\to\infty\).
+        </p>
+        <p>
+            For every \(\epsilon\gt 0\), there must exist \(j\gt 0\) such that
+            \(i\geq j\implies r_i < \epsilon\).
+        </p>
+        <p>
+            Sigh...I suck at these problems, but I find them interesting.  I'll come back to this later.
+        </p>
+    </body>
+</html>

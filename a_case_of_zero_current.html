@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A Case of Zero Current</title>
+    <script type="text/javascript" async  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+</head>
+    <body>
+        <h1>A Case of Zero Current</h1>
+        <p>
+            Consider the following circuit of resistors, all of which are of value \(R\).
+        </p>
+        <center><img src="images/zero_current_case.png"></center>
+        <p>
+            Interestingly, from our model of electric current (as marbles on tracks), it is
+            immediately clear that there is no current from junction \(B\) to \(C\) or vice-versa.
+            In fact, as pointed out by Mark, by symmetry, it is contradictory to claim a direction of current flow between
+            either of these two points.  Anyhow, here we're going to show mathematically that
+            \(I_{BC}=0\).
+        </p>
+        <p>
+            Note that in our notation, \(V_{AB}=V_{A} - V_{B}\), meaning the voltage
+            across \(A\)-to-\(B\) is the voltage \(V_{A}\) at \(A\) differing from that \(V_{B}\)
+            at \(B\).
+        </p>
+        <p>
+            Examining junction \(C\), Kirchhoff tells us that \(I_{AC}+I_{BC}=I_{CD}\).
+            Likewise, examining junction \(B\), we find that \(I_{AB}=I_{BC}+I_{BD}\).
+            Now see that...
+            $$
+            \begin{align}
+            I_{BC} &= I_{CD} - I_{AC} \\
+             &= V_{CD}/R - V_{AC}/R \\
+             &= (V_{CD} - V_{AC})/R \\
+             &= (V_C - V_D - V_A + V_C)/R \\
+             &= (2V_C - V_{bat})/R,
+            \end{align}
+            $$
+            ...since \(V_A=V_{bat}\) and \(V_D=0\).  We now write...
+            $$
+            \begin{align}
+            RI_{AC} + RI_{BC} &= RI_{CD} \\
+            V_A - V_C + V_B - V_C &= V_C - V_D \\
+            V_B &= 3V_C - V_{bat},
+            \end{align}
+            $$
+            ...and we write...
+            $$
+            \begin{align}
+            RI_{AB} &= RI_{BC} + RI_{BD} \\
+            V_A - V_B &= V_B - V_C + V_B - V_D \\
+            V_C &= 3V_B - V_{bat}.
+            \end{align}
+            $$
+            Combining these last two equations, we find that \(V_C = V_{bat}/2\) which,
+            when plugged into earlier equation for \(I_{BC}\), gives us the desired result.
+        </p>
+    </body>
+</html>

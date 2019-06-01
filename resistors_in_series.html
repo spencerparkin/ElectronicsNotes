@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resistors in Series</title>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+</head>
+<body>
+    <h1>Resistors in Series</h1>
+    <p>
+        Refering to the following circuit diagram...
+    </p>
+    <center><img src="images/resistors_in_series.png"></center>
+    <p>
+        ...we let \(\{R_i\}_{i=1}^N\) be a set of \(N\) resistors in series, and
+        let \(V_{bat}\) denote the total voltage of the battery.  These are our known values.
+        Unknown will be the values in \(\{V_i\}_{i=1}^N\), the voltage drops across each
+        resistor, \(\{I_i\}_{i=1}^N\), the currents running through each resistor, \(R_{eqv}\),
+        the equivalent resistance of all the resistors, and \(I\), the net current flowing through the simple circuit.
+        Note that the battery has been split apart to make the diagram simpler.
+    </p>
+    <p>
+        Our first observation here is an application of Kirchhoff's second law.  Being made, we realize
+        that for all \(i\in[1,N]\), we have \(I=I_i\).  Why?  Because there is just one path through
+        the entire circuit, and currents change only when paths split or converge.  That's the nature of current.
+    </p>
+    <p>
+        Applying Ohm's law, we can now find that \(V_i=IR_i=V_{bat}R_i/R_{eqv}\), leaving \(R_{eqv}\) as all we yet need to deduce
+        to determine all the voltage drops.
+    </p>
+    <p>
+        Using the equation \(V_{bat}=IR_{eqv}\) and the set of equations
+        \(\{V_i=I_iR_i\}_{i=1}^N\), we get...
+        $$ IR_{eqv} = V_{bat}=\sum_{i=1}^N V_i = \sum_{i=1}^N IR_i = I\sum_{i=1}^N R_i. $$
+        Now canceling \(I\) on both sides gives us our main result; namely,
+        $$ R_{eqv} = \sum_{i=1}^N R_i. $$
+    </p>
+    <p>
+        The major take-home point here is that the equivilant resistence of resistors in series is
+        simply the sum of all the resistances of the resistors.
+    </p>
+    <p>
+        Note that if I were using variables representing voltages at points instead of voltages across
+        resistors, then we would have witnessed a telescoping sum in the math.
+    </p>
+</body>
+</html>
