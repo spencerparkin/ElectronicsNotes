@@ -20,8 +20,7 @@
         Note that the battery has been split apart to make the diagram simpler.
     </p>
     <p>
-        Our first observation here is an application of Kirchhoff's second law.  Being made, we realize
-        that for all \(i\in[1,N]\), we have \(I=I_i\).  Why?  Because there is just one path through
+        To begin, realize that for all \(i\in[1,N]\), we have \(I=I_i\).  Why?  Because there is just one path through
         the entire circuit, and currents change only when paths split or converge.  That's the nature of current.
     </p>
     <p>
@@ -32,6 +31,7 @@
         Using the equation \(V_{bat}=IR_{eqv}\) and the set of equations
         \(\{V_i=I_iR_i\}_{i=1}^N\), we get...
         $$ IR_{eqv} = V_{bat}=\sum_{i=1}^N V_i = \sum_{i=1}^N IR_i = I\sum_{i=1}^N R_i. $$
+        (Note our application of Kirchhoff's second law here.)
         Now canceling \(I\) on both sides gives us our main result; namely,
         $$ R_{eqv} = \sum_{i=1}^N R_i. $$
     </p>
