@@ -22,12 +22,14 @@
             So the resistor helps us protect how much voltage we send through the LED, because
             it absorbs the remainder of battery voltage.  But we also have to protect the LED from
             how much current it will have to handle.  How do we choose an appropriate resistor?
-            Let \(P_{max}\) be the max power the LED can handle.  Then we need \(P_{max}\geq IV_{led}\), where \(I=V_{bat}/R\).
+            Let \(P_{max}\) be the max power the LED can handle.  Then we need \(P_{max}\geq IV_{led}\), where \(I=V_{bat}/R\),
+            which approximates the resistence of the LED to be zero.
             Combining these, we find that...
             $$
             R\geq\frac{V_{bat}V_{led}}{P_{max}}.
             $$
             It would be interesting if we could calculate the minimum value of \(R\) to make the LED go dark.
+            This is probably a function of \(P_{min}\), the minimum power requirement of the LED.
         </p>
         <p>
             Note that LEDs are diodes, so they only allow current in one direction.  Diodes probably
