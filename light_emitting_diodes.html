@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Light Emitting Diodes</title>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+</head>
+    <body>
+        <h1>Light Emitting Diodes</h1>
+        <p>
+            An interesting observation about resistors is that their voltage drops can
+            change, but this isn't the case with LEDs.  LEDs will always eat the same amount
+            of voltage.  If we consider a circuit that contains just a battery, resistor, and
+            an LED, then the voltage across the resistor will grow or shrink to satisfy
+            the equation \(V_{bat} = V_{R} + V_{led}\).
+        </p>
+        <p>
+            So what happens if we take out the resistor?  Well, I suppose this forces the LED
+            to absorb all the voltage, which will more than likely burn it out.
+        </p>
+        <p>
+            So the resistor helps us protect how much voltage we send through the LED, because
+            it absorbs the remainder of battery voltage.  But we also have to protect the LED from
+            how much current it will have to handle.  How do we choose an appropriate resistor?
+            Let \(P_{max}\) be the max power the LED can handle.  Then we need \(P_{max}\geq IV_{led}\), where \(I=V_{bat}/R\).
+            Combining these, we find that...
+            $$
+            R\geq\frac{V_{bat}V_{led}}{P_{max}}.
+            $$
+            It would be interesting if we could calculate the minimum value of \(R\) to make the LED go dark.
+        </p>
+        <p>
+            Note that LEDs are diodes, so they only allow current in one direction.  Diodes probably
+            deserve their own treatment altogether.
+        </p>
+    </body>
+</html>
