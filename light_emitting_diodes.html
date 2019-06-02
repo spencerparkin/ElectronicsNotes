@@ -12,7 +12,9 @@
             change, but this isn't the case with LEDs.  LEDs will always eat the same amount
             of voltage.  If we consider a circuit that contains just a battery, resistor, and
             an LED, then the voltage across the resistor will grow or shrink to satisfy
-            the equation \(V_{bat} = V_{R} + V_{led}\).
+            the equation \(V_{bat} = V_{R} + V_{led}\).  In other words, changing the voltage
+            across the battery or the LED requires us to change out those components, but no such
+            change is required to change the voltage across the resistor.
         </p>
         <p>
             So what happens if we take out the resistor?  Well, I suppose this forces the LED
@@ -34,6 +36,11 @@
         <p>
             Note that LEDs are diodes, so they only allow current in one direction.  Diodes probably
             deserve their own treatment altogether.
+        </p>
+        <p>
+            Of course, we would want to protect the resistor too from having to handle too much power.
+            In that case, we only reduce the amount of voltage it's taking by reducing the voltage of the
+            battery.
         </p>
     </body>
 </html>
