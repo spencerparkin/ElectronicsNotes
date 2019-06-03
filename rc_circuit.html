@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RC Circuit</title>
+    <script type="text/javascript" async
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"
+            async></script>
+</head>
+    <body>
+        <h1>RC Circuit</h1>
+        <p>
+            The RC circuit is fundamental to the understanding of capacitors.  It is as follows.
+        </p>
+        <p>
+            Insert circuit diagram here.
+        </p>
+        <h2>Charging the Capacitor</h2>
+        <p>
+            We have here a battery supplying voltage \(V_{bat}\), a resistor of resistance \(R\),
+            and a capacitor of capacitance \(C\).  (What exactly is capacitance?  Define it.)
+            These are our constants.  Interestingly, however, the voltages across the capacitor
+            and resistor will change over time.  Their sum, of course, will always be \(V_{bat}\)
+            according to Kirchhoff's voltage law.  Initially, the voltage across the resistor
+            will be \(V_{bat}\) while that of the capacitor will be zero, then finally, these
+            will swap.  We want to know how this happens over time.  The first two equations
+            we need are immediate from our study of Ohm's Law and Kirchhoff's Laws.
+            $$
+            \begin{align}
+            V_R(t) &= RI(t) \\
+            V_{bat} &= V_C(t) + V_R(t)
+            \end{align}
+            $$
+            Now let \(q(t)\) denote the charge of the capacitor at time \(t\).
+            (What units is this in?  What does it mean?  Is it a measure of the difference
+            of electron excess or deficit between the plates of the capacitor?)
+            We then have...
+            $$
+            V_C(t) = \frac{q(t)}{C}.
+            $$
+            ...but I do not yet know where this comes from.  Note that it is an equation
+            akin to Ohm's Law for resistors, especially when combined with the next
+            equation.  (It's someone's law for capacitors, I suppose.)
+            $$
+            I(t) = \frac{d}{dt}q(t)
+            $$
+            Who figured this out?  Where does it come from?  I wish I knew.  Until then,
+            it says that the current at time \(t\) is the rate of change of the charge
+            of the capacitor at time \(t\).  Who knew?!
+        </p>
+        <p>
+            Anyhow, we now have enough information to find a differential equation for
+            the rate of change of the voltage of the capacitor.  Plugging all the equations
+            into each other, it is not hard to arrive at...
+            $$
+            \frac{d}{dt}V_c(t) = \frac{V_{bat} - V_C(t)}{RC},
+            $$
+            ...which is actually quite intuitive.  The rate of change of the voltage
+            of the capacitor is directly proportional to its distance from the battery voltage,
+            and inversly proportional to the resistance \(R\) and capacitance \(C\).
+            (I almost wrote down this very equation when I took at guess at what it should be.)
+        </p>
+        <p>
+            Anyhow, it is a 1st-order linear differential equation, and one that is not terribly
+            easy to solve.  You must use an integration factor.  Skipping those details, one can
+            verify that the following is a solution to the DE, if our initial condition is \(V_C(0)=0\).
+            $$
+            V_C(t) = V_{bat}(1 - e^{-t/RC})
+            $$
+            With this equation, we can now calculate how much time it takes to charge the capacitor
+            to within a given percentage of the battery's voltage.
+        </p>
+        <h2>Discharging the Capacitor</h2>
+        <p>
+            Throwing the switch in the circuit diagram above, we now have a circuit involving
+            just the resistor and the capacitor.  With the battery removed, the only equation
+            that changes is the one derived from Kirchhoff's voltage law.  We now have...
+            $$
+            V_C(t) + V_R(t) = 0.
+            $$
+            We then arrive at the DE...
+            $$
+            \frac{d}{dt}V_C(t) = \frac{-1}{RC}V_C(t),
+            $$
+            ...witch an initial condition of \(V_C(0)=V_{bat}\), if we let the capicotor fully charge.
+            This is much easier to solve, and is simply...
+            $$
+            V_C(t) = V_{bat}e^{-t/RC}.
+            $$
+            We can now use this to calculate how much time it takes for the capacitor to discharge.
+        </p>
+        <h2>References</h2>
+        <ol>
+            <li><a href="https://www.youtube.com/watch?v=Pwe0-H3q6a0">https://www.youtube.com/watch?v=Pwe0-H3q6a0</a></li>
+            <li>Look at <a href="http://hades.mech.northwestern.edu/index.php/Resistors_(Ohm's_Law),_Capacitors,_and_Inductors">this</a> when I get the chance.</li>
+        </ol>
+    </body>
+</html>
