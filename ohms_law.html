@@ -3,11 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <title>Ohm's Law</title>
+    <script type="text/javascript" async
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"
+            async></script>
 </head>
     <body>
         <h1>Ohm's Law</h1>
         <p>
             Here we reveal a fundamental relationship between voltage, current and resistance.
+        </p>
+        <h2>The Resistor</h2>
+        <p>
+            Associated with each resistor is a constant \(R\) denoting its resistance to current.
+            (Variable resistors work by mechanically changing how far current has to travel
+            through some sort of resistive channel.)
+            Current through and voltage across a resistor may change over time, but their relationship
+            is always governed by the equation...
+            $$
+            V = IR.
+            $$
+            This is <b>Ohm's Law</b>.
+        </p>
+        <p>
+            Note that all electronic components exhibit some resistance, so this is applicable
+            to all components to some extent.
+        </p>
+        <p>
+            While on the subject, here we should discuss equivalents of Ohm's Law with respect
+            to electronic components other than the resistor.
+        </p>
+        <h2>The Capacitor</h2>
+        <p>
+            Associated with each capacitor is a constant \(C\) denoting its capacitance.
+            (Interestingly, this is purely a geometric property of the capacitor plates
+            in terms of surface area, how far apart they are, how much they overlap, etc.  Variable
+            capacitors probably operate by mechanically changing the overlap.)
+            The charge \(Q\) on a capacitor and the voltage \(V\) across the capacitor can change
+            over time, but their relationship is always governed by the equation...
+            $$
+            Q = CV.
+            $$
+            But to get something analogous to Ohm's Law, we need to relate voltage and current
+            with respect to the capacitor.  Letting \(I\) and \(Q\) be functions of time \(t\),
+            we need to add the equation...
+            $$
+            I(t) = \frac{d}{dt}Q(t),
+            $$
+            ...but what is this saying?  Well, capacitors can charge and discharge over time,
+            and they do that when we pass a current through them using a battery, or let a current
+            flow from them, respectively.  What the equation says is that the rate of change of charge
+            in the capacitor is directly proportional to the current flowing through/from it.  This makes
+            sense, because we can imaging electron build-up on the plates as current flows through
+            the capacitor, or electron depletion as current flows from the capacitor.  I'm not sure
+            how to describe the difference between charge and voltage in physical terms.
+        </p>
+        <p>
+            Talk about other electrical components here.  Inductors?  Transformers?  Resistors?
         </p>
     </body>
 </html>

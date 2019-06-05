@@ -31,34 +31,24 @@
             V_{bat} &= V_C(t) + V_R(t)
             \end{align}
             $$
-            Now let \(q(t)\) denote the charge of the capacitor at time \(t\).
-            (What units is this in?  What does it mean?  Is it a measure of the difference
-            of electron excess or deficit between the plates of the capacitor?)
+            Now let \(Q(t)\) denote the charge of the capacitor at time \(t\).
             We then have...
             $$
-            V_C(t) = \frac{q(t)}{C}.
+            V_C(t) = \frac{Q(t)}{C}.
             $$
-            ...but I do not yet know where this comes from.  Note that it is an equation
-            akin to Ohm's Law for resistors, especially when combined with the next
-            equation.  (It's someone's law for capacitors, I suppose.)
+            Recall that the rate of change is related to current by...
             $$
-            I(t) = \frac{d}{dt}q(t)
+            I(t) = \frac{d}{dt}Q(t)
             $$
-            Who figured this out?  Where does it come from?  I wish I knew.  Until then,
-            it says that the current at time \(t\) is the rate of change of the charge
-            of the capacitor at time \(t\).  Who knew?!
-        </p>
-        <p>
-            Anyhow, we now have enough information to find a differential equation for
-            the rate of change of the voltage of the capacitor.  Plugging all the equations
-            into each other, it is not hard to arrive at...
+            Combining all the equations we have now, it is not hard to find the differential equation for
+            the rate of change of the voltage of the capacitor.  Doing so, we arrive at...
             $$
             \frac{d}{dt}V_c(t) = \frac{V_{bat} - V_C(t)}{RC},
             $$
             ...which is actually quite intuitive.  The rate of change of the voltage
             of the capacitor is directly proportional to its distance from the battery voltage,
             and inversly proportional to the resistance \(R\) and capacitance \(C\).
-            (I almost wrote down this very equation when I took at guess at what it should be.)
+            (I almost wrote down this very equation when I took a guess at what it should be.)
         </p>
         <p>
             Anyhow, it is a 1st-order linear differential equation, and one that is not terribly
