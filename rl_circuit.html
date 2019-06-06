@@ -3,8 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <title>RL Circuit</title>
+    <script type="text/javascript" async
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"
+            async></script>
 </head>
     <body>
         <h1>RL Circuit</h1>
+        <p>
+            The LR circuit is fundamental to the understanding of inductors.  It is as follows.
+        </p>
+        <center><img src="images/rl_circuit.png"></center>
+        <h2>The Inductors Spinning Up</h2>
+        <p>
+            We have here a battery supplying voltage \(V_{bat}\), a resistor of resistance \(R\),
+            and an inductor of inductance \(L\).  These are our constants.  Interestingly, however,
+            the voltage across the inductor and resistor will change over time.  Their sum, of course,
+            will always be \(V_{bat}\) according to Kirchhoff's voltage law.  Initially, the voltage
+            across the resistor will be zero while that of the inductor will be \(V_{bat}\), over
+            time the tables will turn, then finally, these will swap.  We want to know how this happens
+            over time.  The first two equations we need are immediate from our study of Ohm's Law
+            and Kirchhoff's Laws.  Namely,
+            $$
+            \begin{align}
+            V_R(t) &= RI(t), \\
+            V_{bat} &= V_L(t) + V_R(t).
+            \end{align}
+            $$
+            We now recall the relationship between the inductance \(L\), the change in current,
+            and the voltage across the inductor.
+            $$
+            \frac{d}{dt}I(t) = \frac{V_L(t)}{L}
+            $$
+            Putting everything together, it is not hard to arrive at...
+            $$
+            \frac{d}{dt}V_L(t) = -\frac{R}{L}V_L(t).
+            $$
+            With initial condition \(V_L(0)=V_{bat}\), this easily solves as...
+            $$
+            V_L(t) = V_{bat}e^{-Rt/L}.
+            $$
+            Solving for \(I(t)\), we get...
+            $$
+            I(t) = \frac{V_{bat}}{R}(1-e^{-Rt/L}).
+            $$
+            Notice how the current begins at zero, then rises to \(V_{bat}/R\).
+        </p>
+        <h2>The Inductor Winding Down</h2>
+        <p>
+            I suppose we could do all the math here, but if I understand correctly,
+            only a theoretically perfect inductor would behave the way we would hope here.
+            In practice, it's not the case.  I'll have to do some experiments.
+        </p>
     </body>
 </html>

@@ -12,9 +12,7 @@
         <p>
             The RC circuit is fundamental to the understanding of capacitors.  It is as follows.
         </p>
-        <p>
-            Insert circuit diagram here.
-        </p>
+        <center><img src="images/rc_circuit.png"></center>
         <h2>Charging the Capacitor</h2>
         <p>
             We have here a battery supplying voltage \(V_{bat}\), a resistor of resistance \(R\),
@@ -61,6 +59,17 @@
             With this equation, we can now calculate how much time it takes to charge the capacitor
             to within a given percentage of the battery's voltage.
         </p>
+        <p>
+            Note that it is just as important to understand how current changes over time as it is
+            to understand how the voltage changes over time.  Without needing to solve another DE,
+            we can use what equations we already have to find that...
+            $$
+            I(t) = \frac{V_{bat}}{R}e^{-t/RC}
+            $$
+            This shows that the current goes to zero as the voltage of the capacitor reaches that
+            of the battery.  This may be useful when combined with a transistor so that we can
+            time the flipping of a switch on or off.
+        </p>
         <h2>Discharging the Capacitor</h2>
         <p>
             Throwing the switch in the circuit diagram above, we now have a circuit involving
@@ -93,6 +102,9 @@
             V_C(t) = V_{bat}e^{-t/RC}.
             $$
             We can now use this to calculate how much time it takes for the capacitor to discharge.
+        </p>
+        <p>
+            Notice that, as before, when we try to now find \(I(t)\), we get the same result.
         </p>
         <h2>References</h2>
         <ol>

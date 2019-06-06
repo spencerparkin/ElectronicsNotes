@@ -38,13 +38,13 @@
             (Interestingly, this is purely a geometric property of the capacitor plates
             in terms of surface area, how far apart they are, how much they overlap, etc.  Variable
             capacitors probably operate by mechanically changing the overlap.)
-            The charge \(Q\) on a capacitor and the voltage \(V\) across the capacitor can change
+            The charge \(Q\) on a capacitor and the voltage \(V_C\) across the capacitor can change
             over time, but their relationship is always governed by the equation...
             $$
-            Q = CV.
+            Q(t) = CV_C(t).
             $$
             But to get something analogous to Ohm's Law, we need to relate voltage and current
-            with respect to the capacitor.  Letting \(I\) and \(Q\) be functions of time \(t\),
+            with respect to the capacitor.  Letting \(I\) be functions of time \(t\),
             we need to add the equation...
             $$
             \frac{d}{dt}Q(t) = \pm I(t),
@@ -58,7 +58,57 @@
             however, how to describe the difference between charge and voltage in physical terms.
         </p>
         <p>
-            Talk about other electrical components here.  Inductors?  Transformers?  Resistors?
+            So Ohm's Law of capacitors, if you will, is given by...
+            $$
+            \frac{d}{dt}V_C(t) = \pm\frac{I(t)}{C}.
+            $$
+        </p>
+        <h2>The Inductor</h2>
+        <p>
+            Associated with each inductor is a constant \(L\) denoting its inductance.
+            Interestingly, I think the function of this component derives purely from its geometric properties as well.
+            Specifically, a winding current creates an electromagnetic field, and a changing electromagnetic field
+            induces a current.  In this case, a current in the opposite direction of the current
+            we're trying to pass through the inductor.
+        </p>
+        <p>
+            Admittedly, all of the real physics behind this is
+            way too hard for me to comprehend.  My intuition about inductors is based on the idea of a fly-wheel.
+            A constant force (voltage) applied to them will slowly build momentum in the fly-wheel.
+            The applied force diminishes as the wheel gains momentum (because current is able to flow more and more)
+            until only a minimum force is needed to have the fly-wheel maintain that momentum.
+            When the force is removed altogether, the inductor becomes a source of energy
+            (voltage) until the momentum dissipates.  Unlike a capacitor, however, too much of this
+            energy is lost through means other than the inducement of a current, such as heat.
+        </p>
+        <p>
+            Ohm's Law of inductors, if you will, is given by...
+            $$
+            \frac{d}{dt}I(t) = \pm\frac{V_L(t)}{L}.
+            $$
+            So the rate of change of current is proportional to the voltage across the inductor, and
+            inversely proportional to its inductance.  Notice what a nice complement this is to Ohm's
+            Law for capacitors.
+        </p>
+        <p>
+            It would be more interesting, however, if we could derive this equation using a model
+            that involves the electromagnetic field.  If I had to guess, I'd let \(E(t)\) denote
+            the energy in the electromagnetic field at time \(t\).  Then I would say...
+            $$
+            E(t) = LI(t),
+            $$
+            ...which is to say that this energy is directly proportional to the inductance of the
+            inductor and the amount of current flowing through it.  Then...
+            $$
+            \frac{d}{dt}E(t) = \pm V_L(t),
+            $$
+            ...which is to say that the rate of change of that energy is proportional to the amount
+            of voltage across the inductor.  Notice how these, together, gives us Ohm's Law for
+            inductors, as contrived as they may be.
+        </p>
+        <h2>The Transistor</h2>
+        <p>
+            Talk about it here...
         </p>
     </body>
 </html>
