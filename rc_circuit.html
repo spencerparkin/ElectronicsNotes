@@ -18,11 +18,12 @@
         <h2>Charging the Capacitor</h2>
         <p>
             We have here a battery supplying voltage \(V_{bat}\), a resistor of resistance \(R\),
-            and a capacitor of capacitance \(C\).  (What exactly is capacitance?  Define it.)
+            and a capacitor of capacitance \(C\).
             These are our constants.  Interestingly, however, the voltages across the capacitor
             and resistor will change over time.  Their sum, of course, will always be \(V_{bat}\)
             according to Kirchhoff's voltage law.  Initially, the voltage across the resistor
-            will be \(V_{bat}\) while that of the capacitor will be zero, then finally, these
+            will be \(V_{bat}\) while that of the capacitor will be zero, over time the tables
+            will turn, then finally, these
             will swap.  We want to know how this happens over time.  The first two equations
             we need are immediate from our study of Ohm's Law and Kirchhoff's Laws.
             $$
@@ -38,12 +39,12 @@
             $$
             Recall that the rate of change is related to current by...
             $$
-            I(t) = \frac{d}{dt}Q(t)
+            \frac{d}{dt}Q(t) = I(t)
             $$
             Combining all the equations we have now, it is not hard to find the differential equation for
             the rate of change of the voltage of the capacitor.  Doing so, we arrive at...
             $$
-            \frac{d}{dt}V_c(t) = \frac{V_{bat} - V_C(t)}{RC},
+            \frac{d}{dt}V_C(t) = \frac{V_{bat} - V_C(t)}{RC},
             $$
             ...which is actually quite intuitive.  The rate of change of the voltage
             of the capacitor is directly proportional to its distance from the battery voltage,
@@ -63,12 +64,26 @@
         <h2>Discharging the Capacitor</h2>
         <p>
             Throwing the switch in the circuit diagram above, we now have a circuit involving
-            just the resistor and the capacitor.  With the battery removed, the only equation
-            that changes is the one derived from Kirchhoff's voltage law.  We now have...
+            just the resistor and the capacitor.  With the battery removed, we now have...
             $$
-            V_C(t) + V_R(t) = 0.
+            V_C(t) = V_R(t).
             $$
-            We then arrive at the DE...
+            ...and we now have...
+            $$
+            \frac{d}{dt}Q(t) = -I(t).
+            $$
+            Note that this is not because the direction of current has changed.  Yes, in reality,
+            conventional current is now winding CCW instead of CW as before, but this is not why we
+            negate \(I\) here.
+            The reason we do it is because current is now being drawn from the capacitor rather than
+            being run through it.
+            If we were to argue that the direction of current has changed, we would be wrong in terms
+            of an analysis of the circuit, because in both cases (the charging case, and the discharging case),
+            we're considering conventional current from the perspective of the source of electrical energy,
+            whether that's the battery or the capacitor.
+        </p>
+        <p>
+            Anyhow, with all our information gathered, we can now easily arrive at the DE...
             $$
             \frac{d}{dt}V_C(t) = \frac{-1}{RC}V_C(t),
             $$
@@ -82,7 +97,6 @@
         <h2>References</h2>
         <ol>
             <li><a href="https://www.youtube.com/watch?v=Pwe0-H3q6a0">https://www.youtube.com/watch?v=Pwe0-H3q6a0</a></li>
-            <li>Look at <a href="http://hades.mech.northwestern.edu/index.php/Resistors_(Ohm's_Law),_Capacitors,_and_Inductors">this</a> when I get the chance.</li>
         </ol>
     </body>
 </html>
