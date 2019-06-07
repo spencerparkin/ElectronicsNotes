@@ -3,8 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <title>Capacitors in Series and Parallel</title>
+	<script type="text/javascript" async
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"
+            async></script>
 </head>
     <body>
         <h1>Capacitors in Series and Parallel</h1>
+		<p>
+		In both cases, suppose a battery, a resistor, and then a network
+		of capacitors are our circuit.  Let the battery have constant voltage \(V_{bat}\), and
+		the capacitors each have voltage \(V_i\), current \(I_i\), and capacitance \(C_i\).  We'll be
+		interested to find \(C_{eqv}\).
+		</p>
+		<h2>The Series Case</h2>
+		<p>
+		In this case, we have, for all \(i\), \(I=I_i\), and we have \(V_{eqv}=\sum_i V_i\),
+		since \(V_{bat}=V_R+V_{eqv}\) and \(V_{bat}=V_R+\sum_i V_i\).
+		We now recall that...
+		$$
+		\frac{d}{dt}V_{eqv} = \frac{I}{C_{eqv}},
+		$$
+		...and similarly...
+		$$
+		\frac{d}{dt}V_i = \frac{I_i}{C_i}.
+		$$
+		We then write...
+		$$
+		\frac{I}{C_{eqv}}=\frac{d}{dt}V_{eqv}=\frac{d}{dt}\sum_iV_i = \sum_i\frac{d}{dt}V_i=\sum_i\frac{I_i}{C_i}=I\sum_i\frac{1}{C_i}.
+		$$
+		Now since \(I\neq 0\) for all \(t\), we can divide through by it to get our result...
+		$$
+		\frac{1}{C_{eqv}}=\sum_i\frac{1}{C_i}.
+		$$
+		<h2>The Parallel Case</h2>
+		<p>
+		In this case, we have, for all \(i\), \(V_{eqv}=V_i\), since \(V_{bat}=V_R+V_{eqv}\)
+		and \(V_{bat}=V_R+V_i\).  And we have \(I=\sum_i I_i\).
+		Recalling our relationships between current and voltage for each capacitor and the equivilant
+		capacitor, we then write...
+		$$
+		\frac{d}{dt}V_{eqv}=\frac{I}{C_{eqv}}=\frac{1}{C_{eqv}}\sum_iI_i=\frac{1}{C_{eqv}}\sum_iC_i\frac{d}{dt}V_i.
+		$$
+		Using \(V_i=V_{eqv}\), this can be rearranged as...
+		$$
+		\left(1-\frac{1}{C_{eqv}}\sum_i C_i\right)\frac{d}{dt}V_{eqv}=0.
+		$$
+		But again, \(I\neq 0\) for all \(t\), so we get our result...
+		$$
+		C_{eqv}=\sum_i C_i.
+		$$
+		</p>
     </body>
 </html>
