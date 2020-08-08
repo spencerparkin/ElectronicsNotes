@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Analyzing Circuits of Resistors and Batteries</title>
+</head>
+    <body>
+        <h1>Analyzing Circuits of Resistors and Batteries</h1>
+        <p>
+            Circuit analysis in general is difficult, because not all components have exactly 2 leads,
+			and not all components are static; rather, some behave dynamically.
+			That is, in the general case, current and
+			voltage measurements across the circuit can very over time.  (Note that the term "circuit" is
+			used loosely.  Strictly speaking, a circuit is just one loop, but we use the term to mean a
+			graph of electrical components.)  Consequently, a circuit may have multiple steady-states,
+			or no steady-state at all as things fluctuate over time, oscillate, or perhaps some combination
+			of all such behavior.
+		</p>
+		<p>
+			Here, however, we're going to consider the case of circuits consisting of just resistors
+			and batteries.  In all such cases, there is just one steady state.  This state can be described
+			as the current and voltage levels measurable at every point in the circuit.  Being steady,
+			each such point measures a constant value for each of these two attributes.  Our goal will be,
+			given a circuit under the constraints thus named, what are the current and voltage levels at
+			each principle point in the circuit?
+        </p>
+		<p>
+			Recall that voltage is a measure of difference in charge between two points in a circuit.
+			So voltage at a point in a circuit refers to the difference in charge between that point
+			and wherever ground can be found in the circuit.
+		</p>
+		<p>
+			What we find is that performing this analysis all just boils down to solving a linear
+			system of equations after applying Ohm's Law and Kirkoff's votlage and current laws.  And that's
+			all there is to it.
+		</p>
+		<p>
+			Here are the steps that I believe are required.
+			<ol>
+				<li>Identify all unknown current and voltage values across the circuit, remembering that
+				current changes only at junctions, while voltages change only across components.</li>
+				<li>We now need at least as many equations are there are unknowns, and no equation can be
+				a linear combination of any other equation.
+					<ol>
+						<li>Follow cycles of the circuit graph around while applying Kirkoff's voltage law to relate voltages to voltages.</li>
+						<li>Examine junctions of the circuit graph while applying Kirkoff's current law to relate currents to currents.</li>
+						<li>Use Ohm's Law to relate currents to voltages.</li>
+					</ol>
+				</li>
+				<li>Solve the linear system of equations.  Plug and chug, or use linear algebra.
+			</ol>
+			Note that the direction of current flow is perhaps the trickiest part, and is required for a
+			correct application of Kirkoff's current law.  I suppose a graph traversal algorithm could determine
+			current directions using a breadth-first-search from a battery.  (There could be more than one
+			battery in a circuit.  There is typically only one.)  In some cases, you may need to guess
+			the direction of current, then if you're wrong, you're only wrong up to sign.
+		</p>
+		<p>
+			Another thing to keep in mind when considering the direction of current flow is simply that of
+			voltage level above ground.  Current is trying to flow from high voltage to low voltage.
+		</p>
+		<p>
+			Remember that while the currents of two parallel paths (that split apart and join back together)
+			may differ, their voltage drops are the same.  Conversley, two paths in series share the same
+			current reading, but their voltage drops may differ.
+		</p>
+		<p>
+			Only examples and practice will make this written description come into focus.
+		</p>
+		<p>
+			It's worth noting too that there is a recursive method for analyzing such circuits that is
+			based on an understanding that networks of resistors act like a single resistor of a singular value.
+			This understanding, along with a knowledge of how resistors combine in parallel and series, can
+			sometimes be enough to fully analyze the kind of circutis we're talking about here, but not always.
+		</p>
+    </body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flip-Flop Circuit</title>
+</head>
+    <body>
+        <h1>Flip-Flop Circuit</h1>
+        <p>
+            Here we attempt to analyze the following circuit.
+        </p>
+		<center><img src="flip_flop_circuit.png"></center>
+		<p>
+		I think the first thing we have to do is convince ourselves that when the switches are open, there is only one of two possible steady-states of the circuit.  If we can do that, then it should be clear that by symmetry, when the entire circuit is powered on, there is a race condition between these two states that is resolved only by the smallest asymetrical details of the circuit, such as a small difference in length between two wires, each a reflection of the other across the circuit diagram.  Lastly, when any combination of gates is closed and then opened, it is the last gate to open that ensures the race condition will resolve in one state versus the other.
+		</p>
+		<p>
+		This is a super hand-wavey analysis, and I really wish I could pin down exactly how this circuit works mathematically.
+		</p>
+    </body>
+</html>
